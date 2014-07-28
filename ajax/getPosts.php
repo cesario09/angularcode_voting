@@ -4,10 +4,12 @@ include('../includes/config.php');
 $query="select id,title,description,url,votes from posts order by id desc";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
+echo $result;
+
 $arr = array();
 if($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		$arr[] = $row;	
+		$arr[] = $row;
 	}
 }
 
